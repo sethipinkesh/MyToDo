@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:weightSum="1"
+    tools:context="mytodoapp.codepath.com.mytodo.ToDoListActivity">
+
+    <TextView
+        android:id="@+id/listItemLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_weight=".6"
+        android:text="label 1" />
+
+    <TextView
+        android:id="@+id/listItemLDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="right"
+        android:layout_weight=".4"
+        android:text="date 1"
+        android:visibility="gone"/>
+
+
+</LinearLayout>

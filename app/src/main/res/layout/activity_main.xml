@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/main_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:layout_height="match_parent">
     tools:context="mytodoapp.codepath.com.mytodo.ToDoListActivity">
 
     <ListView
         android:id="@+id/todolist"
-        android:layout_width="355dp"
-        android:layout_height="384dp"
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/addButton"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_gravity="bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
         android:layout_margin="16dp"
-        android:clickable="true"
-        android:src="@drawable/ic_plus" />
-</LinearLayout>
+        android:src="@drawable/ic_plus"
+        app:backgroundTint="@color/colorPrimaryDark"
+        app:layout_anchor="@id/todolist"
+        app:layout_anchorGravity="bottom|right|end" />
+
+</android.support.design.widget.CoordinatorLayout>

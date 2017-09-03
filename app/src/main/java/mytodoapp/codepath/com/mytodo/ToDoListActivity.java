@@ -25,7 +25,7 @@ public class ToDoListActivity extends AppCompatActivity implements EditItemDialo
         todoListView = (ListView) findViewById(R.id.todolist);
         toDoItemList = Utils.getItemsListFromFile(getFilesDir());
         findViewById(R.id.addButton).setOnClickListener(this);
-        toDoListAdaper = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, toDoItemList);
+        toDoListAdaper = new ItemArrayAdapter(this,toDoItemList);
         todoListView.setAdapter(toDoListAdaper);
         todoListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener(){
             @Override
@@ -33,7 +33,7 @@ public class ToDoListActivity extends AppCompatActivity implements EditItemDialo
                 toDoItemList.remove(position);
                 Utils.writeItemToFile(getFilesDir(), toDoItemList);
                 toDoListAdaper.notifyDataSetChanged();
-                return false;
+                return true;
             }
         });
 

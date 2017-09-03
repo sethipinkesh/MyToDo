@@ -62,7 +62,11 @@ public class EditItemDialogFragment extends DialogFragment implements View.OnCli
         inputItemEditText = (EditText) view.findViewById(R.id.editText);
         view.findViewById(R.id.button).setOnClickListener(this);
         inputItemEditText.setText(getArguments().getString("item_key"));
-        getDialog().setTitle("Edit item");
+        if(getArguments().getString("item_key").isEmpty()) {
+            getDialog().setTitle("Add item");
+        }else{
+            getDialog().setTitle("Edit item");
+        }
         inputItemEditText.requestFocus();
         getDialog().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
     }
